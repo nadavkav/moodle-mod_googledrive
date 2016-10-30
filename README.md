@@ -14,8 +14,9 @@ git clone https://github.com/nadavkav/moodle-mod_googledrive.git mod/googledrive
 ```
 Or Download the plugin as a ZIP file and open it into mod/googledrive
 
-[Get composer](https://getcomposer.org/download/)
+[Get composer](https://getcomposer.org/download/), 
 cd into mod/googledrive
+
 And run `php composer.phar require google/apiclient:^2.0`
 
 ### Enabling The Plugin
@@ -25,7 +26,7 @@ In Moodle, go to administrator -> plugin overview, and press 'Update database'.
 
 Settings can be found at: Site Administration -> Plugins -> Activity Modules -> Google Drive
 
-## Unresoulved issues
+## Unresolved issues
 * We are currently using the latest Google Drive API v2, as Moodle 3.1 core Google SDK API is using an older version which is missing
 important functionality. As it is causing some conflicts, I am not using the Moodle HTML Editor with the Intro form field and just 
 a simple textarea box. This should be solved in future versions :-)
