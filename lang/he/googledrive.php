@@ -28,31 +28,33 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-$string['modulename'] = 'Google Drive file';
+$string['modulename'] = 'מסמך גוגל שיתופי';
 $string['modulenameplural'] = 'Google Drives files';
 $string['modulename_help'] = 'Use the googledrive module for sharing a Google drive type file as a base for students creative collaboration| The googledrive module allows...';
 $string['googledrivefieldset'] = 'Custom example fieldset';
-$string['googledrivename'] = 'Google Drive file name';
+$string['googledrivename'] = 'שם מסמך גוגל משותף';
 $string['googledrivename_help'] = 'This is the content of the help tooltip associated with the googledrivename field. Markdown syntax is supported.';
 $string['googledrive'] = 'GoogleDrive';
-$string['pluginadministration'] = 'GoogleDrive administration';
-$string['pluginname'] = 'Google Drive file';
-
-$string['needauthentication'] = 'For a limited amount of time, you are asked to give Moodle permissions to create files in your own Google drive.'.
-    ' Please click the following button (which opens a new window/tab) read the information on that page and authorize Moodle to act on your behalf,'.
-    ' then close that window/tab and reload this page, and continue setting all the other preferences on this page';
-$string['gdrive_document'] = 'Google Drive document file';
-$string['gdrive_presentation'] = 'Google Drive presentation file';
-$string['gdrive_spreadsheet'] = 'Google Drive spreadsheet file';
-$string['gdrive_mindmap'] = 'Google Drive mindmap file';
+$string['pluginadministration'] = 'ניהול גוגל מסמכים';
+$string['pluginname'] = 'מסמך גוגל שיתופי';
+$string['needauthentication'] = 'יצירה של מסמך גוגל שיתופי במאגר הקבצים האישי שלך ושיתוף שלו בהרשאות שונות עם התלמידים'.
+    ' דורש מתן הרשאה זמנית למערכת מוודל זו על מנת שתוכל לקבל גישה ליצירה של קבצים בחשבון גוגל שלכם.'.
+    ' אנא הקליקו על הכפתור הבא אשר יפתח חלונית בה יש לאשר את הגישה הזמנית לחשבון הגוגל שלכם.'.
+    ' לסיום סיגרו את החלונית וחזרו לטופס זה להמשך הזנת הפרטים ויצירת המסמך.';
+$string['gdrive_document'] = 'מסמך גוגל משותף';
+$string['gdrive_presentation'] = 'מצגת גוגל משותפת';
+$string['gdrive_spreadsheet'] = 'גליון אלקטרוני משותף';
+$string['gdrive_mindmap'] = 'מפת־חשיבה משותפת';
 $string['filetypes'] = 'סוג קובץ';
 $string['filetypes_moreinfo'] = 'Google Drive file type (Document, Presentation, Spreadsheet, ...)';
 $string['filetypes_moreinfo_help'] = 'Google Drive file type (Document, Presentation, Spreadsheet, ...)';
+$string['gdrivepermissionsauthenticated'] = 'אישור הגישה התקבל בהצלחה :-)';
 $string['gdrivepermissions'] = 'הרשאות';
-$string['gdrivepermissions_moreinfo'] = 'Google Drive file permissions(Auther + Student\'s R/W/C)';
-$string['gdrivepermissions_moreinfo_help'] = 'Google Drive file permissions(Auther + Student\'s R/W/C)';
-$string['gdriveurl'] = 'Google Drive shared file URL';
+$string['gdrivepermissions_moreinfo'] = 'Google Drive file permissions(Author + Student\'s R/W/C)';
+$string['gdrivepermissions_moreinfo_help'] = 'Google Drive file permissions(Author + Student\'s R/W/C)';
+$string['nextisagooglefileurl'] = 'השדה הבא שמור/מכיל קישור למסמך הגוגל השיתופי אשר נוצר באופן אוטומטי.';
+$string['gdriveurl'] = 'קישור לקובץ הגוגל המשותף';
 $string['googledriveintro'] = 'הנחיה לתלמידים';
-$string['gdrive_authorstudentsrc'] = 'מורה (כק) + תלמידים (כע)';
-$string['gdrive_authorstudentsrw'] = 'מורה (כק) + תלמידים (כק)';
+$string['gdrive_authorstudentsrc'] = 'מורה (הרשאות:כתיבה) + תלמידים (הרשאות:קריאה+תגובה)';
+$string['gdrive_authorstudentsrw'] = 'מורה (הרשאות:כתיבה) + תלמידים (הרשאות:קריאה+כתיבה)';
 

@@ -96,6 +96,7 @@ class mod_googledrive_mod_form extends moodleform_mod {
         $mform->setDefault('gdrivepermissions', GDRIVEFILEPERMISSION_AUTHER_STUDENTS_RC);
         $mform->addHelpButton('gdrivepermissions', 'gdrivepermissions_moreinfo', 'googledrive');
 
+        $mform->addElement('static', 'nextisagooglefileurl', '', get_string('nextisagooglefileurl', 'googledrive'));
         //$mform->addElement('hidden', 'externalurl');
         //$mform->addElement('url', 'externalurl', get_string('externalurl', 'url'), array('size'=>'60'), array('usefilepicker'=>true));
         $mform->addElement('text', 'gdriveurl', get_string('gdriveurl', 'googledrive'), array('size'=>'60'));

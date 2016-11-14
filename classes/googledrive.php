@@ -177,7 +177,9 @@ class googledrive {
 
         $url = new \moodle_url($this->client->createAuthUrl());
         $url->param('state', $returnurl->out_as_local_url(false));
-        return '<a class="btn" target="_blank" href="'.$url->out(false).'">'.get_string('login', 'repository').'</a>';
+        return '<a role="button" onClick="window.open(\''.$url->out(false).'\', \'_new\', \'height=400,width=600\');"><span class="btn">'.
+            get_string('login', 'repository').'</span></a>';
+        //return '<a class="btn" target="_blank" href="'.$url->out(false).'">'.get_string('login', 'repository').'</a>';
     }
 
 

@@ -18,5 +18,11 @@ core_php_time_limit::raise();
 
 $gdrive = new googledrive($cmid);
 $gdrive->callback();
-
-echo "Your Google drive user access is Authenticated :-)";
+$strauthenticated = get_string('gdrivepermissionsauthenticated', 'googledrive');
+$strclose = get_string('close', 'quiz');
+echo "<h2 style='text-align: center;'>$strauthenticated</h2>";
+echo "<div style='text-align: center;'><button onclick='window.close();'>$strclose</button></div>";
+// Auto close the window, in 5sec.
+echo "<script type='text/javascript'><!--
+setTimeout('self.close()',5000);
+--></script>";

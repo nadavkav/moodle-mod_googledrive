@@ -141,9 +141,6 @@ function googledrive_add_instance(stdClass $googledrive, mod_googledrive_mod_for
         debugging('Error - not authenticated with Google!');
     }
     $author = array('emailAddress' => $USER->email, 'displayName' => fullname($USER));
-//    $students = array(
-//        array('id' => '100', 'emailAddress' => 'nadavkav+student01@gmail.com', 'displayName' => 'Nadav the student01'),
-//        array('id' => '101', 'emailAddress' => 'nadavkav+student02@gmail.com', 'displayName' => 'Nadav the student02'));
     $context = context_course::instance($googledrive->course);
     //$users = get_enrolled_users($context);
     $coursestudents = get_role_users(5, $context);
@@ -187,7 +184,7 @@ function googledrive_update_instance(stdClass $googledrive, mod_googledrive_mod_
     if ($googledrive->intro == null) $googledrive->intro = $mform->get_current()->intro;
     if ($googledrive->introformat == null) $googledrive->introformat = $mform->get_current()->introformat;
 
-    $googledrive->introeditor = '';
+    $googledrive->introeditor = null;
 
     // You may have to add extra stuff in here.
 
