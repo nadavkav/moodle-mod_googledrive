@@ -42,7 +42,7 @@ if ($id) {
     $course     = $DB->get_record('course', array('id' => $googledrive->course), '*', MUST_EXIST);
     $cm         = get_coursemodule_from_instance('googledrive', $googledrive->id, $course->id, false, MUST_EXIST);
 } else {
-    error('You must specify a course_module ID or an instance ID');
+    print_error('You must specify a course_module ID or an instance ID');
 }
 
 require_login($course, true, $cm);
@@ -78,6 +78,6 @@ if ($googledrive->intro) {
 
 // Replace the following lines with you own code.
 //echo $OUTPUT->heading('Yay! It works!');
-echo html_writer::empty_tag('IFRAME', array('src' => $googledrive->gdriveurl, 'width'=>'100%', 'height' => '800'));
+echo html_writer::nonempty_tag('IFRAME', '.', array('src' => $googledrive->gdriveurl, 'width'=>'100%', 'height' => '800'));
 // Finish the page.
 echo $OUTPUT->footer();
