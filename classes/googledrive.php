@@ -97,10 +97,6 @@ class googledrive {
         $this->client->setClientId(get_config('googledocs', 'clientid'));
         $this->client->setClientSecret(get_config('googledocs', 'secret'));
 
-        // Google "other" type web client
-        //$this->client->setClientId('374407723441-d9orqa8coc90od6b9lihitpo8c050q5e.apps.googleusercontent.com');
-        //$this->client->setClientSecret('B6vU2xiBtGRpt8SWe8W_mHO9');
-
         $this->client->setScopes(array(
             \Google_Service_Drive::DRIVE,
             \Google_Service_Drive::DRIVE_APPDATA,
