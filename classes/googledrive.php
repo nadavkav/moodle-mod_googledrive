@@ -94,12 +94,12 @@ class googledrive {
         //$this->client->setIoClass('moodle_google_curlio');
 
         // Google "web" client (used with regular Moodle old Google APIs)
-        //$this->client->setClientId(get_config('googledocs', 'clientid'));
-        //$this->client->setClientSecret(get_config('googledocs', 'secret'));
+        $this->client->setClientId(get_config('googledocs', 'clientid'));
+        $this->client->setClientSecret(get_config('googledocs', 'secret'));
 
         // Google "other" type web client
-        $this->client->setClientId('374407723441-d9orqa8coc90od6b9lihitpo8c050q5e.apps.googleusercontent.com');
-        $this->client->setClientSecret('B6vU2xiBtGRpt8SWe8W_mHO9');
+        //$this->client->setClientId('374407723441-d9orqa8coc90od6b9lihitpo8c050q5e.apps.googleusercontent.com');
+        //$this->client->setClientSecret('B6vU2xiBtGRpt8SWe8W_mHO9');
 
         $this->client->setScopes(array(
             \Google_Service_Drive::DRIVE,
@@ -269,22 +269,14 @@ class googledrive {
         try {
             $batch = $this->service->createBatch();
 
-//            $userPermission1 = new \Google_Service_Drive_Permission(
-//                array(
-//                    'type' => 'user',
-//                    'role' => 'writer',
-//                    'emailAddress' => 'nadavkav@gmail.com'
-//                )
-//            );
-
             // Give proper permissions to author (teacher).
             if (!empty($this->author)) {
                 $this->author['type'] = 'user';
                 $this->author['role'] = 'writer';
-                $userPermission1 = new \Google_Service_Drive_Permission($this->author);
+                $userAuthorPermission = new \Google_Service_Drive_Permission($this->author);
             }
             $request1 = $this->service->permissions->create(
-                $fileId, $userPermission1, array('fields' => 'id'));
+                $fileId, $userAuthorPermission, array('fields' => 'id'));
             $batch->add($request1, 'user_author');
 
             // Give proper permissions to all students.
@@ -310,19 +302,7 @@ class googledrive {
                 }
 
             }
-
-
-//            $userPermission3 = new \Google_Service_Drive_Permission(
-//                array(
-//                    'type' => 'user',
-//                    'role' => 'commenter',
-//                    'emailAddress' => 'nadavkav+student3@gmail.com'
-//                )
-//            );
-//            $request3 = $this->service->permissions->create(
-//                $fileId, $userPermission3, array('fields' => 'id'));
-//            $batch->add($request3, 'user');
-
+// TODO: consider allowing permission per domain
 //    $domainPermission = new Google_Service_Drive_Permission(array(
 //        'type' => 'domain',
 //        'role' => 'reader',
@@ -386,49 +366,6 @@ class googledrive {
         throw new repository_exception('cannotdownload', 'repository');
     }
 
-    /**
-     * Prepare file reference information.
-     *
-     * We are using this method to clean up the source to make sure that it
-     * is a valid source.
-     *
-     * @param string $source of the file.
-     * @return string file reference.
-     */
-    public function get_file_reference($source) {
-        return clean_param($source, PARAM_URL);
-    }
-
-    /**
-     * What kind of files will be in this repository?
-     *
-     * @return array return '*' means this repository support any files, otherwise
-     *               return mimetypes of files, it can be an array
-     */
-    public function supported_filetypes() {
-        return '*';
-    }
-
-    /**
-     * Tells how the file can be picked from this repository.
-     *
-     * Maximum value is FILE_INTERNAL | FILE_EXTERNAL | FILE_REFERENCE.
-     *
-     * @return int
-     */
-    public function supported_returntypes() {
-        return FILE_EXTERNAL;
-    }
-
-    /**
-     * Return names of the general options.
-     * By default: no general option name.
-     *
-     * @return array
-     */
-    public static function get_type_option_names() {
-        return array('clientid', 'secret', 'pluginname');
-    }
 
     /**
      * Edit/Create Admin Settings Moodle form.
@@ -436,7 +373,11 @@ class googledrive {
      * @param moodleform $mform Moodle form (passed by reference).
      * @param string $classname repository class name.
      */
+    /*
     public static function type_config_form($mform, $classname = 'repository') {
+
+        // TODO: this function is not used, yet.
+        // We are using Moodle's google api clientid & secret, for now.
 
         $callbackurl = new moodle_url(self::CALLBACKURL);
 
@@ -456,4 +397,5 @@ class googledrive {
         $mform->addRule('clientid', $strrequired, 'required', null, 'client');
         $mform->addRule('secret', $strrequired, 'required', null, 'client');
     }
+    */
 }

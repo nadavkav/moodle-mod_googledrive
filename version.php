@@ -30,7 +30,7 @@ defined('MOODLE_INTERNAL') || die();
 $plugin->component = 'mod_googledrive';
 $plugin->version = 2016100100;
 $plugin->release = 'v0.1';
-$plugin->requires = 2016052302;
+$plugin->requires = 2016052301;
 $plugin->maturity = MATURITY_ALPHA;
 //$plugin->cron = 0;
 //$plugin->dependencies = array();

@@ -49,6 +49,7 @@ define('GDRIVEFILEPERMISSION_AUTHER_STUDENTS_RW', 1); // Auther (teacher) can RW
 
 /**
  * @return array google drive file type names and mimetypes.
+ * http://stackoverflow.com/questions/11412497/what-are-the-google-apps-mime-types-in-google-docs-and-google-drive#11415443
  */
 function gdrive_filetypes() {
     $mimetypes = array();

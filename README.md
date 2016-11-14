@@ -20,7 +20,10 @@ cd into mod/googledrive
 And run `php composer.phar require google/apiclient:^2.0`
 
 ### Enabling The Plugin
-In Moodle, go to administrator -> plugin overview, and press 'Update database'.
+* In Moodle, go to administrator -> plugin overview, and press 'Update database'.
+* Make sure Google drive repository is setup correctly 
+(navigate to: Site administration -> Plugins -> Repositories -> Google Drive)
+Follow the instructions concerning setting up a Google developer account and enabling Google Drive SDK API privileges. 
 
 ## Settings
 

@@ -77,7 +77,7 @@ if ($googledrive->intro) {
 }
 
 // Replace the following lines with you own code.
-echo $OUTPUT->heading('Yay! It works!');
+//echo $OUTPUT->heading('Yay! It works!');
 echo html_writer::empty_tag('IFRAME', array('src' => $googledrive->gdriveurl, 'width'=>'100%', 'height' => '800'));
 // Finish the page.
 echo $OUTPUT->footer();
