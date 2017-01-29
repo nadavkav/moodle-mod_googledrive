@@ -34,5 +34,8 @@ Settings can be found at: Site Administration -> Plugins -> Activity Modules -> 
 important functionality. As it is causing some conflicts, I am not using the Moodle HTML Editor with the Intro form field and just 
 a simple textarea box. This should be solved in future versions :-)
 
+## TODO 
+* Be able to choose an already available document
+* Share the document manually by the teacher, at a later time. (after the teacher put some content into the document, and not immediately as the module was added to the course)
 
 Good luck and have fun!
