@@ -21,9 +21,11 @@ And run `php composer.phar require google/apiclient:^2.0`
 
 ### Enabling The Plugin
 * In Moodle, go to administrator -> plugin overview, and press 'Update database'.
-* Make sure Google drive repository is setup correctly 
-(navigate to: Site administration -> Plugins -> Repositories -> Google Drive)
-Follow the instructions concerning setting up a Google developer account and enabling Google Drive SDK API privileges. 
+* Make sure Google drive repository is setup correctly: 
+  * In Moodle
+     * 3.1: navigate to: Site administration -> Plugins -> Repositories -> Google Drive. 
+     * 3.3: navigate to: Site administration -> Server -> OAuth 2 services -> Click "Create new Google service". 
+  * In Google account: Follow the instructions concerning setting up a [Google developer account](https://docs.moodle.org/33/en/OAuth_2_Google_service) in order for the plugin to use Google Drive services and OAuth 2 authentication services. 
 
 ## Settings
 
